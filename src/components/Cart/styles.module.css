@@ -1,0 +1,160 @@
+.container{
+    background-color: #136713;
+    position: fixed;
+    bottom: 0;
+    right: 30px;
+    width: 300px;
+    border-radius: 7px 7px 0 0;
+    color: #fdfdfd;
+}
+
+.container h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.cartHeader{
+    display: flex;
+    height: 40px;
+    align-items: center;
+    gap: 15px;
+    padding-left: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.cartHeader span{
+    margin-left: 10px;
+}
+
+.cartHeader p{
+    flex: 1;
+}
+.cartIcon{
+    font-size: 1.4rem;
+}
+
+.cartArrow{
+    font-size: 1.5rem;
+    margin-right: 10px;
+}
+
+.cartBody{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.productArea{
+    display: flex;
+    flex-direction: column;
+}
+
+.productItem{
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+}
+
+.productItem img{
+    width: 64px;
+    height: auto;
+    border-radius: 5px;
+}
+
+.productInfo{
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.productInfo h6{
+    font-size: .95rem;
+    font-weight: bold;
+}
+
+.productInfo p {
+    font-size: .8rem;
+}
+
+.quantityArea{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.quantityArea button{
+    background: none;
+    border: none;
+    color: #fdfdfd;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+
+
+/* ADRESS  */
+
+.adressContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.adressIcon{
+    font-size: 1.4rem;
+    cursor: pointer;
+}
+
+
+/* DISCOUNT */
+
+.discountCupom{
+    height: 30px;
+    width: 100%;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+
+/* VALUES */
+
+.valuesArea{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.values{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    font-family: sans-serif;
+}
+
+
+
+.buyButton{
+    background-color: #154715;
+    border: none;
+    padding: 15px;
+    color: #fdfdfd;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.buyButton:hover{
+    background-color: #143814;
+}
+
+.empty{
+    padding: 40px;
+    text-align: center;
+    
+}

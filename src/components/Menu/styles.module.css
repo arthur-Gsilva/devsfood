@@ -1,0 +1,42 @@
+.container{
+    background-color: #136713;
+    width: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.iconsArea{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    font-size: 1.7rem;
+}
+
+.iconItem{
+    color: #fdfdfd;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.iconItem:hover{
+    background-color: #154715 !important;
+}
+
+
+@Media(max-width: 450px){
+    .container{
+        width: 50px;
+    }
+
+    .iconItem{
+        width: 40px;
+        height: 40px;
+    }
+}

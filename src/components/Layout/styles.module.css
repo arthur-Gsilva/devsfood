@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    background-color: red;
+    height: 100vh;
+}
+
+.main{
+    display: flex;
+    flex: 1;
+    background-image: url('../../assets/bg.png');
+    background-color: #00980d;
+    overflow-y: auto;
+    
+}

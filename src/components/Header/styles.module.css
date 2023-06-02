@@ -1,0 +1,42 @@
+.container{
+    background-color: #136713;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container img{
+    width: auto;
+    height: 70px;
+}
+
+.input{
+    border: 0;
+    outline: 0;
+    border-radius: 25px;
+    width: 0;
+    height: 50px;
+    background-color: #fff;
+    background-image: url('../../assets/search.png');
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 50px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+
+@Media(max-width: 775px){
+    .logo{
+        display: none;
+    }
+}
+
+@media(max-width: 450px){
+    .container img{
+        height: 40px;
+    }
+}

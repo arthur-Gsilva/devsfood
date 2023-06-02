@@ -1,0 +1,111 @@
+.container{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .7);
+    z-index: 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent{
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+.productArea{
+    display: flex;
+    gap: 20px;
+}
+
+.imageArea{
+    border: 2px solid #136713;
+}
+
+.imageArea img{
+    width: 250px;
+    height: 100%;
+}
+
+.productContent{
+    color: #136713;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.productContent h2{
+    font-family: sans-serif;
+}
+
+.priceArea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceActions{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.priceActions button{
+    border: 0;
+    background: none;
+    font-size: 2rem;
+    color: #136713;
+    cursor: pointer;
+}
+
+.priceActions span{
+    font-size: 1.2rem;
+}
+
+.price{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+
+
+.buttonsArea{
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+.buttonsArea button{
+    background-color: #136713;
+    border: 0;
+    color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.buttonsArea button:hover{
+    opacity: .9;
+}
+
+
+
+@media(max-width: 550px){
+    .imageArea img{
+        width: 180px;
+    }
+
+    .buttonsArea button{
+        padding: 10px;
+    }
+
+    .productContent h2{
+        font-size: 1.2rem;
+    }
+}
