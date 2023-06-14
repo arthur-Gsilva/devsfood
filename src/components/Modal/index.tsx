@@ -4,6 +4,8 @@ import { useFormatter } from '../../../libs/useFormatter'
 import { useEffect, useState, useContext } from 'react'
 import { Context } from '@/contexts/cartContext'
 
+import { useRouter } from 'next/router';
+
 
 type Props = {
     status: boolean,
@@ -15,6 +17,8 @@ export const Modal = ({ status, setStatus, data }: Props) => {
 
     const formatter = useFormatter()
     const  { state, dispatch } = useContext(Context)
+    const { register } = state.register
+    const router = useRouter()
 
     const [quantity, setQuantity] = useState(1)
 
@@ -28,10 +32,14 @@ export const Modal = ({ status, setStatus, data }: Props) => {
 
     const addCart = () => {
 
-        dispatch({
-            type: 'ADD_PRODUCT',
-            payload: { data, quantity}
-        })
+        if(register === true){
+            dispatch({
+                type: 'ADD_PRODUCT',
+                payload: { data, quantity}
+            })
+        } else{
+            router.push('/profile')
+        }
 
         setStatus(false)
     }

@@ -1,6 +1,7 @@
 import styles from './styles.module.css'
 import { useContext, useEffect, useState } from 'react'
 import { Context } from '@/contexts/cartContext'
+import { useRouter } from 'next/router'
 
 import { IoIosArrowDown } from 'react-icons/io'
 import { MdShoppingCart } from 'react-icons/md'
@@ -11,6 +12,7 @@ export const Cart = () => {
 
     const  { state, dispatch } = useContext(Context)
     const formatter = useFormatter()
+    const router = useRouter()
 
     const [opened, setOpened] = useState(false)
     const [total, setTotal] = useState(0)
@@ -128,8 +130,8 @@ export const Cart = () => {
                             <h3>Endereço</h3>
 
                             <div className={styles.adressContent}>
-                                <p>Recife, Pe</p>
-                                <FiEdit className={styles.adressIcon}/>
+                                <p>{state.user.address}</p>
+                                <FiEdit className={styles.adressIcon} onClick={() => router.push('/profile')}/>
                             </div>
                     </div>
 
