@@ -1,5 +1,6 @@
 import styles from './styles.module.css'
 import { useContext, useEffect, useState } from 'react'
+import { Product } from '@/types/product'
 import { Context } from '@/contexts/cartContext'
 import { useRouter } from 'next/router'
 
@@ -7,6 +8,7 @@ import { IoIosArrowDown } from 'react-icons/io'
 import { MdShoppingCart } from 'react-icons/md'
 import { FiEdit } from 'react-icons/fi'
 import { useFormatter } from '../../../libs/useFormatter'
+
 
 export const Cart = () => {
 
@@ -17,7 +19,7 @@ export const Cart = () => {
     const [opened, setOpened] = useState(false)
     const [total, setTotal] = useState(0)
 
-    let productFilter: any[] = []
+    let productFilter: Product[] = []
 
     if (state.cart.products && state.cart.products.length > 0) {
         productFilter = state.cart.products.filter(product => product.quantity > 0);
