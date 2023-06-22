@@ -1,6 +1,7 @@
 import { Product } from "@/types/product"
 import { ReducerActionType } from "@/types/reducerAction"
 
+
 export type cartType = {
     products: Product[],
     address: string[],
@@ -18,7 +19,12 @@ export const cartInitialState: cartType = {
 export default (state = cartInitialState, action: ReducerActionType) => {
 
     let products = [...state.products]
-    let { key } = action.payload
+    let key: any = null
+
+    if (action.payload && action.payload.key) {
+        key =  action.payload.key;
+    }
+
     let index2 = products.findIndex(item => item.id === key)
 
     switch(action.type){
@@ -45,7 +51,9 @@ export default (state = cartInitialState, action: ReducerActionType) => {
         break;
         case 'LOW_QUANTITY':
             products[index2].quantity -= 1
-            
+        break;
+        case 'REMOVE_PRODUCTS':
+            return {...state, products: []}
         break;
     }
 

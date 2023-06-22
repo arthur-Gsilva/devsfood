@@ -17,7 +17,12 @@ export const Cart = () => {
     const [opened, setOpened] = useState(false)
     const [total, setTotal] = useState(0)
 
-    const productFilter = state.cart.products.filter(product => product.quantity > 0)
+    let productFilter: any[] = []
+
+    if (state.cart.products && state.cart.products.length > 0) {
+        productFilter = state.cart.products.filter(product => product.quantity > 0);
+      }
+
 
     const toggleOpened = () => {
         if(opened === true){
@@ -57,6 +62,35 @@ export const Cart = () => {
         setTotal(totalPrice)
 
     }, [productFilter])
+
+
+    
+
+    const onPurchase = () => {
+
+        dispatch({
+            type: "CHANGE_PRODUCTS",
+            payload: {
+                products: state.cart.products
+            },
+        }),
+        dispatch({
+            type: "CHANGE_ADDRESS",
+            payload: {
+                address: state.user.address
+            }
+        }),
+        dispatch({
+            type: "CHANGE_TOTAL",
+            payload: {
+                total: total - 3.5
+            }
+        })
+
+        dispatch({type: "REMOVE_PRODUCTS"})
+        setOpened(false)
+        router.push('/orders')
+    }
 
     return(
         <div className={styles.container}>
@@ -152,11 +186,11 @@ export const Cart = () => {
                             <div className={styles.values}>
                                 <p>Total</p>
 
-                                <p>{formatter.formatPrice(total - 13.5)}</p>
+                                <p>{formatter.formatPrice(total - 3.5)}</p>
                             </div>
                     </div>
 
-                    <button className={styles.buyButton}>Finalizar Compra</button>
+                    <button className={styles.buyButton} onClick={onPurchase}>Finalizar Compra</button>
                 </div>
             }
 

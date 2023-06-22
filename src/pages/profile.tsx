@@ -51,14 +51,13 @@ const Profile = () => {
 
                 <h2>Preencha aqui as suas informações</h2>
 
-                <form className={styles.form} onSubmit={handleRegister} autoComplete='off'>
+                <form className={styles.form} onSubmit={handleRegister}>
                     <label htmlFor="name">Nome Completo</label> 
                     <input 
                         type="text" 
                         id='name'
                         ref={nameRef}
                         autoFocus
-                        autoComplete='off'
                     /> 
 
                     <label htmlFor="email">Email</label> 
@@ -66,7 +65,6 @@ const Profile = () => {
                         type="email" 
                         id='email'
                         ref={emailRef}
-                        autoComplete='off'
                     />
 
                     <label htmlFor="tel">Telefone</label> 
@@ -74,7 +72,6 @@ const Profile = () => {
                         type="text" 
                         id="tel" 
                         ref={telRef}
-                        autoComplete='off'
                     />
 
                     <label htmlFor="address">Endereço</label> 
@@ -82,7 +79,6 @@ const Profile = () => {
                         type="text" 
                         id='address'
                         ref={addressRef}
-                        autoComplete='off'
                     />
 
                     <button>Salvar</button>
